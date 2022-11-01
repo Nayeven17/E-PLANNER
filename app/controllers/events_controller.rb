@@ -1,7 +1,5 @@
 class EventsController < ApplicationController
-
-  before_action :set_event, only: %i[ show edit update destroy ]
-
+  before_action :set_event, only: %i[show edit update destroy]
 
   def index
     @events = Event.all
@@ -18,9 +16,9 @@ class EventsController < ApplicationController
   def edit
   end
 
-    def create
+  def create
     @event = Event.new(event_params)
-    @event.user_id=current_user.id
+    @event.user_id = current_user.id
     respond_to do |format|
       if @event.save
         redirect_to event_url(@event), notice: "Your event has been created"
@@ -30,24 +28,20 @@ class EventsController < ApplicationController
     end
   end
 
-    def update
+  def update
   end
 
   def destroy
     @event.destroy
   end
 
-
   private
-    def set_event
-      @event = Event.find(params[:id])
-    end
 
-    def event_params
-      params.require(:event).permit(:event_title, :description, :event_type, :price, :start_date, :end_date, :location, :slot, :event_contact, :image_url)
-    end
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-
-
-
+  def event_params
+    params.require(:event).permit(:event_title, :description, :event_type, :price, :start_date, :end_date, :location, :slot, :event_contact, :image_url)
+  end
 end
