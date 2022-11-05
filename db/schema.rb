@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_115239) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
+    t.string "category"
     t.string "description"
     t.string "location"
     t.integer "price"
