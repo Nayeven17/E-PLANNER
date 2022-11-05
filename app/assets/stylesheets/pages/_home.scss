@@ -1,1 +1,50 @@
-// Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center 1300px;
+  padding: 160px 0;
+  height: 95vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.container h1 {
+  margin-top: 50px;
+}
+
+
+.welcome-text {
+  text-align: center;
+}
+
+.welcome-text a {
+  border: 1px solid #fff;
+  padding: 10px 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 15px;
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+}
+
+.welcome-text a:hover {
+  background: rgb(237, 127, 25);
+  color: rgb(0, 0, 0);
+}
+
