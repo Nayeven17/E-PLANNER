@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @reviews = @event.reviews
+    # @reviews = @event.reviews if (@event.reviews).exist?
   end
 
   def new
