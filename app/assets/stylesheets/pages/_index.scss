@@ -1,2 +1,89 @@
 // Import page-specific CSS files here.
-@import "home";
+.banner {
+  // background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  width: 100%;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 50px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.container-background{
+  background-color: rgb(242, 242, 242);
+}
+
+// card
+.card-product {
+  overflow: hidden;
+  height: 250px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  width: 800px;
+}
+
+.card-product:hover {
+  transform: scale(1.02);
+}
+.card-product img {
+  height: 100%;
+  width: 250px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+
+// .card-category {
+//   background-size: cover;
+//   background-position: center;
+//   text-align: center;
+//   height: 180px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   transition: transform 0.4s ease-out;
+//   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+// }
+
+// .card-category:hover {
+//   transform: scale(1.02);
+// }
+
+
+// .a-link {
+//   color: #22b4a8;
+// }
