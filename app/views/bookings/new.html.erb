@@ -1,0 +1,13 @@
+<div class="float-container">
+  <h1>Please fill in your booking details:</h1>
+
+  <br>
+
+  <%= simple_form_for [@event, @booking] do |f| %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :end_date, as: :date, html5: true %>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :event_id %>
+  <%= f.submit "Book now", class: "btn btn-primary" %>
+  <% end %>
+</div>
