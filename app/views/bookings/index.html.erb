@@ -1,0 +1,19 @@
+<div class="center">
+    <h1>Order Summary</h1>
+      <ul style="list-style-type:none;">
+        <% @bookings.each do |booking| %>
+
+          <li>Title: <%= booking.title %>
+          <li>Description: <%= booking.description %>
+          <li>Start date: <%= booking.start_date %>
+          <li>End date: <%= booking.end_date %>
+          <li>Location: <%= booking.location %>
+          <li>Price: <%= booking.price %>
+          <li>Category: <%= booking.category %>
+          <li><%= booking.image_url %></li>
+        <%end %>
+
+      </ul>
+
+    <%= link_to 'Go back',:back, class: 'btn btn-flat' %>
+</div>
