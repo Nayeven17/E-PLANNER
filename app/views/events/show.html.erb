@@ -1,4 +1,4 @@
-    <div class="car-show">
+    <div class="event-show">
       <div class="container">
 
          <div cover mb-4 d-flex align-items-center justify-content-center>
@@ -25,13 +25,14 @@
                 </div>
             </div>
           </div>
-        <%= link_to 'Book this event',new_event_booking_path(@event), class: 'btn btn-gradient' %>
+        <%= link_to 'Book this event',event_path(@event), class: 'btn btn-gradient' %>
         <%= link_to 'Back',:back, class: 'btn btn-gradient' %>
-        <%= link_to 'Create Review', new_event_review_path(@event), class: 'btn btn-gradient'%>
-        <ul>
-        <% @reviews.each do |review| %>
-        <li> <%= review.feedback %></li>
-        <% end %>
-        </ul>
+        <%= link_to 'Create Review', event_path(@event), class: 'btn btn-gradient'%>
+        <%# <ul> %>
+        <%# <% @reviews.each do |review| %>
+        <%# <li> <%= review.comment %></li> %>
+        <%# <li> <%= review.rating %></li> %>
+        <%# <% end %> %> %>
+        <%# </ul> %>
       </div>
     </div>

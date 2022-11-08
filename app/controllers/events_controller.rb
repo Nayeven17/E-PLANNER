@@ -6,7 +6,13 @@ class EventsController < ApplicationController
   end
 
   def show
-    @reviews = @event.reviews if (@event.reviews).exist?
+
+    # @reviews = @event.reviews if (@event.reviews).exists?
+
+    # if (@event.reviews).exists?
+    #   @reviews = @event.reviews
+
+    # end
   end
 
   def new
@@ -42,6 +48,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:event_title, :description, :event_type, :price, :start_date, :end_date, :location, :slot, :event_contact, :image_url)
+    params.require(:event).permit(:event_title, :description, :category, :price, :start_date, :end_date, :location, :slot, :contact, :image_url)
   end
 end
