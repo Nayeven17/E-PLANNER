@@ -11,9 +11,13 @@
       <br>
 
 
-      <div class="welcome-text ">
-        <a href="#">See Event</a>
-        <a href="#">Create an Event</a>
+      <div class="button-banner">
+        <%= link_to "/events" do %>
+            <button type="button" class="btn btn-flat">See Events</button>
+          <% end %>
+        <%= link_to "#" do %>
+            <button type="button" class="btn btn-flat">Create Event</button>
+          <% end %>
       </div>
     </div>
   </div>
