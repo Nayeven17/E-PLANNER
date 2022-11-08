@@ -1,19 +1,16 @@
-<div class="center">
-    <h1>Order Summary</h1>
-      <ul style="list-style-type:none;">
-        <% @bookings.each do |booking| %>
-
-          <li>Title: <%= booking.title %>
-          <li>Description: <%= booking.description %>
-          <li>Start date: <%= booking.start_date %>
-          <li>End date: <%= booking.end_date %>
-          <li>Location: <%= booking.location %>
-          <li>Price: <%= booking.price %>
-          <li>Category: <%= booking.category %>
-          <li><%= booking.image_url %></li>
-        <%end %>
-
-      </ul>
-
-    <%= link_to 'Go back',:back, class: 'btn btn-flat' %>
+<div class="container">
+  <h1>Order Summary</h1>
+    <table class="table table-hover">
+      <% @bookings.each do |booking| %>
+        <% if current_user == booking.user %>
+          <td>Title: <%= booking.event.title %></td>
+          <td>Start Date: <%= booking.event.start_date %></td>
+          <td>End Date: <%= booking.event.end_date %></td>
+          <td>Description: <%= booking.event.description %></td>
+          <td>Price: <%= booking.event.price %></td>
+          <td>Location: <%= booking.event.location %></td>
+        <% end %>
+      <%end %>
+    </ul>
+  <%= link_to 'Go back',:back, class: 'btn btn-flat' %>
 </div>
