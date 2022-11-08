@@ -29,7 +29,7 @@ events = [
     description: "Greatest event for the beginning of summer featuring famous local artists!",
     start_date: Date.new(2022, 8, 5),
     end_date: Date.new(2022, 8, 5),
-    location: "Grand Baie",
+    location: "Les Ruines de Balaclava",
     price: 2_300,
     category: "Festival",
     slot: 100,
@@ -42,7 +42,7 @@ events = [
     description: "A unique event for the first time in Mauritius...",
     start_date: Date.new(2022, 11, 6),
     end_date: Date.new(2022, 11, 6),
-    location: "Mahebourg",
+    location: "Le Château de Labourdonnais",
     price: 1_500,
     category: "Festival",
     slot: 400,
@@ -55,12 +55,139 @@ events = [
     description: "The sun is back, and so is Sunburn! Come and have a great time with friends at Sunburn!",
     start_date: Date.new(2022, 12, 5),
     end_date: Date.new(2022, 12, 5),
-    location: "Trou aux Biches",
+    location: "Le Domaine de St Aubin",
     price: 1_800,
     category: "Festival",
     slot: 350,
     contact: "sunburn@festival.com",
     image_url: "https://images.unsplash.com/photo-1567942712661-82b9b407abbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    user_id: user1.id
+  },
+  {
+    title: "Dave Brown - Acoustic Tour",
+    description: "Dave Brown, the famous British artist will be here to make you rediscover his last album in an
+    intimate setting",
+    start_date: Date.new(2022, 11, 14),
+    end_date: Date.new(2022, 11, 14),
+    location: "The Green Village",
+    price: 1_000,
+    category: "Concert",
+    slot: 80,
+    contact: "davebrown@acoustictour.com",
+    image_url: "https://images.unsplash.com/photo-1534014003122-b516fbde05d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    user_id: user2.id
+  },
+  {
+    title: "New Year's Eve at Château de Labourdonnais",
+    description: "Come and party with your friends and family at Le Chateau de Labourdonnais for a unique and festive
+    New Year! Open buffet all night long and fireworks to end the night beautifully!",
+    start_date: Date.new(2022, 12, 31),
+    end_date: Date.new(2022, 12, 31),
+    location: "Le Château de Labourdonnais",
+    price: 2_500,
+    category: "Festival",
+    slot: 400,
+    contact: "reservations@lcdlb.com",
+    image_url: "https://images.unsplash.com/photo-1535379665706-aea78de84a41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    user_id: user1.id
+  },
+  {
+    title: "Le Cirque de L'Aurore",
+    description: "Le Cirque de l'Aurore est de retour à Maurice, avec encore plus d'artistes à découvrir! Réservez-vite
+    vos places et venez profiter de ce moment magique en famille et entre amis!",
+    start_date: Date.new(2022, 12, 15),
+    end_date: Date.new(2022, 12, 26),
+    location: "Bagatelle Mall",
+    price: 1_000,
+    category: "Spectacle",
+    slot: 350,
+    contact: "reservations@lcda.com",
+    image_url: "https://images.unsplash.com/photo-1558894656-499bef76ce48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80",
+    user_id: user2.id
+  },
+  {
+    title: "Mauritius Flower Festival 2022",
+    description: "For the first time in Mauritius, discover the Flower Festival 2022, with the most beaufilly flowered
+    parade you've ever seen! Dress up in your most flowery outfit and join us to celebrate together!",
+    start_date: Date.new(2022, 11, 28),
+    end_date: Date.new(2022, 11, 28),
+    location: "Domaine de Lagrave",
+    price: 1_200,
+    category: "Festival",
+    slot: 500,
+    contact: "flowerfest@flfestival.com",
+    image_url: "https://images.unsplash.com/photo-1634820491179-03ae219ff58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    user_id: user1.id
+  },
+  {
+    title: "Sunset Party 2022",
+    description: "Sea, Sun and Sand ! Our local artists  and DJS will make you vibe till the end of the night! Unlimited
+    drinks, photobooth and tropical buffet will be available. Get your tickets now! ",
+    start_date: Date.new(2022, 11, 27),
+    end_date: Date.new(2022, 11, 27),
+    location: "The Ravenala Attitude Hotel",
+    price: 2_000,
+    category: "Festival",
+    slot: 200,
+    contact: "reservations@ravenala.com",
+    image_url: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    user_id: user2.id
+  },
+  {
+    title: "Twelve and A Half by Gary Veee",
+    description: "Gary Vee, CEO of VaynerX and 5-Times NYT bestseller will be in Mauritius as part of his tour for his
+    new book 'Twelve and A Half. Don't miss this once in a lifetime opportunity and get yout tickets now! ",
+    start_date: Date.new(2022, 12, 4),
+    end_date: Date.new(2022, 12, 4),
+    location: "J & J Auditorium",
+    price: 2_800,
+    category: "Conference",
+    slot: 500,
+    contact: "garyveeteam@vee.com",
+    image_url: "https://images.unsplash.com/photo-1546872006-42c78c0ccb29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
+    user_id: user1.id
+  },
+  {
+    title: "Orchestre Philharmonique de Vienne - Concert de Noel",
+    description: "Le Conservatoire National a le plaisir de vous inviter à un concert de Noel par l'Orchestre
+    Philharmonique de Vienne, dirigé par le célèbre chef d'orchestre David Cohen ! Réservez vos place au plus vite!",
+    start_date: Date.new(2022, 12, 27),
+    end_date: Date.new(2022, 12, 27),
+    location: "Caudan Arts Center",
+    price: 1_200,
+    category: "Concert",
+    slot: 400,
+    contact: "events@rezo.com",
+    image_url: "https://images.unsplash.com/photo-1617544517234-c436b0624a34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    user_id: user2.id
+  },
+  {
+    title: "Chinese Festival 2023 at Le Domaine de Labourdonnais",
+    description: "Celebrate Chinese New Year at Le DOmaine de Labourdonnais with your family and friends. Discover a
+    selection of traditional Chinese dishes and desserts and get ready for an evening full of surprises! ",
+    start_date: Date.new(2023, 2, 4),
+    end_date: Date.new(2023, 2, 4),
+    location: "Le Domaine de Labourdonnais",
+    price: 1_000,
+    category: "Festival",
+    slot: 300,
+    contact: "contact@ldl.com",
+    image_url: "https://images.unsplash.com/photo-1553343030-f3b3292c43d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    user_id: user2.id
+  },
+  {
+    title: "African Night",
+    description: "Vous voulez passer un moment agréable en famille ou entre amis? Ça tombe bien! L'African Night ne vous
+     décevra pas! Au sommaire: 6 artistes venu tout droit du continent Africain qui vous feront valser au son des
+     instruments traditionnels. Reservez-vite vos places pour nous rejoindre!",
+    start_date: Date.new(2022, 12, 22),
+    end_date: Date.new(2022, 12, 22),
+    location: "Jam Inn",
+    price: 1_100,
+    category: "Concert",
+    slot: 200,
+    contact: "africannight@afromusic.com",
+    image_url: "https://images.unsplash.com/photo-1571951178107-b061c6ae01aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     user_id: user1.id
   }
 ]

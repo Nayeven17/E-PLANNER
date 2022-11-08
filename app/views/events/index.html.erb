@@ -9,26 +9,38 @@
 <br>
 
 <div class="container container-background">
+<br>
   <h1>All Events</h1>
 
 <br>
 
-<div class="card-products-container">
-  <% @events.each do |event| %>
-  <div class="card-product" style="background-image: url(<%= event.image_url %>)">
-  <div>
-    <div class="card-product-infos ">
-      <h2><%= event.title %></h2>
-      <p> <%= event.start_date %> to <%= event.end_date %></p>
-      <p><%= event.location %></p>
-      <p><%= event.price %></p>
-    </div>
-    <div>
-    <%= link_to "Go To Event", event, class: "btn btn-ghost" %>
-    </div>
-    </div>
+  <div class="card-products-container">
+    <% @events.each do |event| %>
+      <div class="card-product" style="background-image: url(<%= event.image_url %>)">
+        <div class="overlay">
+          <div class="card-product-infos">
+            <div class="head">
+              <h2><%= event.title %></h2>
+              <hr>
+            </div>
+            <div class="details">
+              <i class="fa-solid fa-calendar-days"></i>
+              <p><%= event.start_date %> to <%= event.end_date %></p>
+              <i class="fa-solid fa-location-dot"></i>
+              <p><%= event.location %></p>
+              <i class="fa-solid fa-ticket"></i>
+              <p>Rs <%= event.price %></p>
+            </div>
+            <div>
+              <%= link_to "Go To Event", event, class:"btn btn-ghost" %>
+              <i class="fa-solid fa-angles-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 
+ <br>
+ <br>
  <br>
