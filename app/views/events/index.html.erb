@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
   <div class="container">
     <h1>Discover events in Mauritius</h1>
     <p>Getting tickets has never been easier</p>
@@ -9,39 +9,38 @@
 <br>
 
 <div class="container container-background">
+<br>
   <h1>All Events</h1>
 
 <br>
 
-  <div class="card-product">
-    <%# <% @events.each do |event|  %>
-      <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
-      <div class="card-product-infos ">
-        <%= <h2>event.event_title</h2> %>
-        <%= event.start_date %> to <%= event.end_date %>
-        <%= event.location %>
-
-      </div>
-    <%# <% end %>
-  </div>
-</div>
-
-<br>
-
-<%#
-  <div class="card">
+  <div class="card-products-container">
     <% @events.each do |event| %>
-      <%# <div class="card-category event-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <%= event.images_url )">
-        <div>
-          <%= event.event_title %>
-          <%# <%= event.date
-          <%= event.location
+      <div class="card-product" style="background-image: url(<%= event.image_url %>)">
+        <div class="overlay">
+          <div class="card-product-infos">
+            <div class="head">
+              <h2><%= event.title %></h2>
+              <hr>
+            </div>
+            <div class="details">
+              <i class="fa-solid fa-calendar-days"></i>
+              <p><%= event.start_date %> to <%= event.end_date %></p>
+              <i class="fa-solid fa-location-dot"></i>
+              <p><%= event.location %></p>
+              <i class="fa-solid fa-ticket"></i>
+              <p>Rs <%= event.price %></p>
+            </div>
+            <div>
+              <%= link_to "Go To Event", event, class:"btn btn-ghost" %>
+              <i class="fa-solid fa-angles-right"></i>
+            </div>
+          </div>
         </div>
-        <div>
-          <%= link_to "Learn More", event, class: "a-link" %>
-          <%# <i class="fa-solid fa-eye"></i>
-        </div>
-      </div> %>
-    <%# <% end %>
+      </div>
+    <% end %>
   </div>
-</div>
+
+ <br>
+ <br>
+ <br>
