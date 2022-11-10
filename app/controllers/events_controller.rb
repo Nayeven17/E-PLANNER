@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
-
+    @booking = Booking.new
     # @reviews = @event.reviews if (@event.reviews).exists?
 
     # if (@event.reviews).exists?
