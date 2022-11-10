@@ -3,14 +3,19 @@
     <table class="table table-hover">
       <% @bookings.each do |booking| %>
         <% if current_user == booking.user %>
+        <tr>
           <td>Title: <%= booking.event.title %></td>
           <td>Start Date: <%= booking.event.start_date %></td>
           <td>End Date: <%= booking.event.end_date %></td>
           <td>Description: <%= booking.event.description %></td>
           <td>Price: <%= booking.event.price %></td>
           <td>Location: <%= booking.event.location %></td>
+          </tr>
         <% end %>
       <%end %>
     </ul>
   <%= link_to 'Go back',:back, class: 'btn btn-flat' %>
 </div>
+
+
+#
