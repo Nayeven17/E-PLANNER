@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  has_one_attached :photo
   validates :description, presence: true
   validates :title,       presence: true
   validates :category,  presence: true
