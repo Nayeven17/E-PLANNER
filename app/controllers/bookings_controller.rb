@@ -18,10 +18,12 @@ class BookingsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     @booking = Booking.new(booking_params)
-    @booking.event = @event
     @booking.user = current_user
+    @booking.event = @event
+    @pax = @booking.pax
     @booking.save
-    redirect_to event_bookings_path(@event)
+    @event.update(slot: @event.slot - @pax)
+    redirect_to bookings_path
     flash[:alert] = "Congratulation your event is booked !"
   end
 
@@ -35,7 +37,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :event_id)
+    params.require(:booking).permit(:pax, :user_id, :event_id)
   end
 
 end

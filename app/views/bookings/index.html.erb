@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Order Summary</h1>
     <table class="table table-hover">
-      <% @bookings.each do |booking| %>
+      <% @bookings.reverse_each do |booking| %>
         <% if current_user == booking.user %>
         <tr>
           <td>Title: <%= booking.event.title %></td>
@@ -10,6 +10,7 @@
           <td>Description: <%= booking.event.description %></td>
           <td>Price: <%= booking.event.price %></td>
           <td>Location: <%= booking.event.location %></td>
+          <td>Number of tickets: <%= booking.pax %></td>
           </tr>
         <% end %>
       <%end %>
@@ -18,4 +19,3 @@
 </div>
 
 
-#

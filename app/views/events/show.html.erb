@@ -25,9 +25,7 @@
                 </div>
             </div>
           </div>
-        <%= link_to 'Book this event',event_path(@event), class: 'btn btn-gradient' %>
         <%= link_to 'Back',:back, class: 'btn btn-gradient' %>
-        <%= link_to 'Create Review', event_path(@event), class: 'btn btn-gradient'%>
       </div>
     </div>
 
@@ -36,14 +34,14 @@
                <div class="card bg-light my-3">
                     <div class="card-body d-flex align-items-center">
 <div class="container new-booking-form">
-  <h1>Booking request</h1>
+   <h1>Booking request</h1>
   </div>
 
 
     <%= simple_form_for [@event, @booking] do |f| %>
-    <%= f.input :start_date, as: :string, input_html: {type: :date, value: Time.now.strftime('%Y-%m-%d')} %>
-    <%= f.input :end_date, as: :string, input_html: {type: :date, value: Time.now.strftime('%Y-%m-%d')}%>
-    
-    <%= f.button :submit, "Request to book", class:"btn btn-primary nomad-button" %>
+
+    <%= f.input :pax, as: :integer %>
+
+    <%= f.button :submit, "Book here", class:"btn btn-primary nomad-button" %>
   <% end %>
 </div>
