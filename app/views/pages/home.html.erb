@@ -1,167 +1,181 @@
-<!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1556340346-5e30da977c4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);">
-    <div class="container">
-      <h1>E-Planner</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1556340346-5e30da977c4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);">
+  <div class="container">
+    <h1>E-Planner</h1>
 
-      <p>Our innovation is your perfect event solution
+    <p>Our innovation is your perfect event solution</p>
 
-      <br>
-      <br>
+    <br>
+    <br>
 
-
-
-      <div class="button-banner text-center">
-        <div class="btn-one btn btn-ghost">
-          <%= link_to "See Events", "/events", class: "btn btn-ghost" %>
-        </div>
-        <div class="btn-two">
-          <%= link_to "Create Event", "#", class: "btn btn-ghost" %>
-        </div>
+    <div class="d-flex gap-2 justify-content-center text-center">
+        <%= link_to "See Events", "/events", class: "btn btn-ghost" %>
+        <%= link_to "Create Event", "#", class: "btn btn-ghost" %>
     </div>
   </div>
-
+</div>
 
 <br>
 <br>
 <br>
 <br>
-
-
-
-  <%# <hr class="hr"> %>
-
-
-
 
 <div class="container text-center">
   <h2>About E-Planner</h2>
   <hr class="hr">
     <div class="about-us">
-      <p>Created in 2020, E-Planner is an online platform whose main target is to provide event organisers with a reliable and user-friendly platform for the marketing and promotion of their events.
-    Throughout our 2 years of existence, successful local and international companies, productions and artists decided to trust E-Planner and promoted a plethora of successful events all over the island!
+      <p>
+        Created in 2020, E-Planner is an online platform whose main target is to provide event organisers with a reliable and user-friendly platform for the marketing and promotion of their events.
+        Throughout our 2 years of existence, successful local and international companies, productions and artists decided to trust E-Planner and promoted a plethora of successful events all over the island!
       </p>
+    </div>
 </div>
 
 <%# -----SERVICES-----  %>
 <div class="container-home text-center">
-  <%# <h2>Our Services</h2>
-  <hr class="hr"> %>
-
-<section class="we-offer-area text-center bg-gray">
-        <div class="container-home">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="site-heading text-center">
-                        <h2><span>Our Services</span></h2>
-                        <h4>What our customers benefit from</h4>
-                    </div>
+  <section class="we-offer-area text-center bg-gray">
+    <div class="container-home">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="site-heading text-center">
+                    <h2><span>Our Services</span></h2>
+                    <h4>What our customers benefit from</h4>
                 </div>
             </div>
-                <div class="row our-offer-items less-carousel">
-                    <!-- Single Item -->
-                    <div class="col-md-4 col-sm-6 equal-height">
-                        <div class="item">
-                            <i class="fas fa-pen-fancy"></i>
-                            <h4>Event Promotion</h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-
-                    <!-- Single Item -->
-                    <div class="col-md-4 col-sm-6 equal-height">
-                        <div class="item">
-                            <i class="fas fa-dharmachakra"></i>
-                            <h4>Event Management</h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-
-                    <!-- Single Item -->
-                    <div class="col-md-4 col-sm-6 equal-height">
-                        <div class="item">
-                            <i class="fas fa-tasks"></i>
-                            <h4>E-Ticketing</h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-                </div>
         </div>
-    </section>
-<br>
+        <div class="row our-offer-items less-carousel">
+            <!-- Single Item -->
+            <div class="col-md-4 col-sm-6 equal-height">
+                <div class="item">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h4>Event Promotion</h4>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+            </div>
+            <!-- End Single Item -->
 
-<%# -----SERVICES----- %>
+            <!-- Single Item -->
+            <div class="col-md-4 col-sm-6 equal-height">
+                <div class="item">
+                    <i class="fas fa-dharmachakra"></i>
+                    <h4>Event Management</h4>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+            </div>
+            <!-- End Single Item -->
+
+            <!-- Single Item -->
+            <div class="col-md-4 col-sm-6 equal-height">
+                <div class="item">
+                    <i class="fas fa-tasks"></i>
+                    <h4>E-Ticketing</h4>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+            </div>
+            <!-- End Single Item -->
+        </div>
+    </div>
+  </section>
+  <br>
 </div>
 
-<div class="container-home text-center">
+<%# testimonial %>
+<%# <div class="container-home text-center">
   <h2>They trust us</h2>
-  <%# <hr class="hr"> %>
 
-    <section class="testimonial text-center">
-        <div class="container">
-<%#
-            <div class="heading white-heading">
-                Testimonial
-            </div> %>
-            <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
+  <section class="testimonial text-center">
+    <div class="container">
+      <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
 
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                        <div class="testimonial4_slide">
-                            <img src="https://i.ibb.co/8x9xK4H/team.jpg" class="img-circle img-responsive" />
-                            <p>"Great platform to advertise your events. My team and I have been using E-Planner for 6 months now and we are highly satisfied.
-                            We highly recommend E-Planner for event organisers, this platform will save you time and money.
-                            Great as well to reach customers all over the island". </p>
-                            <h4>- David, Sales Manager</h4>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testimonial4_slide">
-                            <img src="https://images.unsplash.com/photo-1645830166230-187caf791b90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="img-circle img-responsive" /><p>"The website is nice and user-friendly.
-                            My friends and I have been buying tickets for some time now, we have been able to enjoy numerous events without the need to go out and buy tickets.
-                            All necessary information is readily available and booking tickets is straight forward".</p>
-                            <h4>- Nayeven, Front-End Developer</h4>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testimonial4_slide">
-                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="img-circle img-responsive" />
-                            <p>"The services E-Planner offers for event organisers have been really helpful in boosting our tickets' sales, positively impacting our revenue.
-                            Our company plans to use E-Planner's platform for our upcoming events. We highly encourage event organisers to discover this really useful tools, you will not regret this decision".</p>
-                            <h4>- Aurélie, Event Manager</h4>
-                        </div>
-                    </div>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <div class="testimonial4_slide">
+                    <img src="https://i.ibb.co/8x9xK4H/team.jpg" class="img-circle img-responsive" />
+                    <p>"Great platform to advertise your events. My team and I have been using E-Planner for 6 months now and we are highly satisfied.
+                    We highly recommend E-Planner for event organisers, this platform will save you time and money.
+                    Great as well to reach customers all over the island". </p>
+                    <h4>- David, Sales Manager</h4>
                 </div>
-                <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#testimonial4" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
             </div>
-        </div>
-    </section>
-</div>
-
+            <div class="carousel-item">
+                <div class="testimonial4_slide">
+                    <img src="https://images.unsplash.com/photo-1645830166230-187caf791b90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="img-circle img-responsive" /><p>"The website is nice and user-friendly.
+                    My friends and I have been buying tickets for some time now, we have been able to enjoy numerous events without the need to go out and buy tickets.
+                    All necessary information is readily available and booking tickets is straight forward".</p>
+                    <h4>- Nayeven, Front-End Developer</h4>
+                </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial4_slide">
+                  <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="img-circle img-responsive" />
+                  <p>"The services E-Planner offers for event organisers have been really helpful in boosting our tickets' sales, positively impacting our revenue.
+                  Our company plans to use E-Planner's platform for our upcoming events. We highly encourage event organisers to discover this really useful tools, you will not regret this decision".</p>
+                  <h4>- Aurélie, Event Manager</h4>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#testimonial4" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+      </div>
+    </div>
+  </section>
+</div> %>
+<br>
 <br>
 
-  <h2>End of page</h2>
-  <h2>End of Page</h2>
-  <h2>End of page</h2>
-  <h2>End of Page</h2>
-  <h2>End of page</h2>
-  <h2>End of Page</h2>
-  <h2>End of page</h2>
-  <h2>End of Page</h2>
 
-</html>
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+    <h2 style="text-align:center;">Testimonial</h2>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://images.unsplash.com/photo-1573152958734-1922c188fba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>David, Sales Manager</h5>
+        <p>Great platform to advertise your events. My team and I have been using E-Planner for 6 months now and we are highly satisfied.
+        We highly recommend E-Planner for event organisers, this platform will save you time and money.
+        Great as well to reach customers all over the island</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1573152958734-1922c188fba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Nayeven, Front-End Developer</h5>
+        <p>The website is nice and user-friendly.
+          My friends and I have been buying tickets for some time now, we have been able to enjoy numerous events without the need to go out and buy tickets.
+          All necessary information is readily available and booking tickets is straight forward</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1573152958734-1922c188fba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Aurélie, Event Manager</h5>
+        <p>The services E-Planner offers for event organisers have been really helpful in boosting our tickets' sales,  positively impacting our revenue.
+          Our company plans to use E-Planner's platform for our upcoming events. We highly encourage event organisers to discover this really useful tools, you will not regret this decision</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
