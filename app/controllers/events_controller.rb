@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
+  before_action :find_index, only: [:edit, :update]
 
   def index
     @events = Event.all
@@ -35,6 +36,8 @@ class EventsController < ApplicationController
   end
 
   def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
   end
 
   def destroy
@@ -48,6 +51,11 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:event_title, :description, :category, :price, :start_date, :end_date, :location, :slot, :contact, :image_url, :photo)
+    params.require(:event).permit(:event_title, :description, :pax, :category, :price, :start_date, :end_date, :location, :slot, :contact, :image_url, :photo)
   end
+
+  def booking_params
+    params.require(:booking).permit(:pax, :user_id, :event_id)
+  end
+
 end
