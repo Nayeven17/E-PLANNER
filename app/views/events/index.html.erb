@@ -8,11 +8,11 @@
 <br>
 <br>
 
-<div class="container container-background">
-<br>
+<div class="container container-background mb-5">
+  <br>
   <h1>All Events</h1>
 
-<br>
+  <br>
 
   <div class="card-products-container">
     <% @events.each do |event| %>
@@ -21,26 +21,36 @@
           <div class="card-product-infos">
             <div class="head">
               <h2><%= event.title %></h2>
-              <hr>
             </div>
-            <div class="details">
-              <i class="fa-solid fa-calendar-days"></i>
-              <p><%= event.start_date %> to <%= event.end_date %></p>
-              <i class="fa-solid fa-location-dot"></i>
-              <p><%= event.location %></p>
-              <i class="fa-solid fa-ticket"></i>
-              <p>Rs <%= event.price %></p>
-            </div>
+              <div class="details">
+
+                <div style="margin-bottom: 15px;">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <%= event.start_date %> to <%= event.end_date %>
+                </div>
+
+
+                <div style="margin-bottom: 15px;">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <%= event.location %>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                  <i class="fa-solid fa-ticket"></i>
+                  Rs <%= event.price %>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                  Available places : <%= event.slot %>
+                </div>
+
+              </div>
             <div>
               <%= link_to "Go To Event", event, class:"btn btn-ghost" %>
-              <i class="fa-solid fa-angles-right"></i>
             </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-
- <br>
- <br>
- <br>
+</div>
