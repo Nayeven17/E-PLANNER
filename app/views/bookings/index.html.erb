@@ -11,9 +11,15 @@
           <td>Price: <%= booking.event.price %></td>
           <td>Location: <%= booking.event.location %></td>
           <td>Number of tickets: <%= booking.pax %></td>
+          <td><!-- app/views/restaurants/show.html.erb -->
+<%= link_to "Delete",
+  booking_path(booking),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%></td>
         </tr>
         <% end %>
       <%end %>
     </table>
   <%= link_to 'Go back',:back, class: 'btn btn-flat' %>
+
 </div>
