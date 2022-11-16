@@ -2,6 +2,17 @@
   <div class="container">
     <h1>Discover events in Mauritius</h1>
     <p>Getting tickets has never been easier</p>
+
+    <div class="searchbar">
+      <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an event"
+      %>
+      <%= submit_tag "Search", class: "btn btn-warning" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
