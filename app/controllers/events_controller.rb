@@ -41,12 +41,14 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])
     @event.update(event_params)
+    redirect_to event_path(@event)
+    flash[:alert] = "Event Updated."
   end
 
   def destroy
     @event.destroy
+    redirect_to restaurants_path, status: :see_other
   end
 
   private

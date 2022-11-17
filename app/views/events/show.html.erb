@@ -2,6 +2,7 @@
   <div class="container text-center">
     <div cover mb-4 d-flex align-items-center justify-content-center>
         <h1>Event Details</h1>
+        <% if current_user.is_buyer? %>
           <div class="d-flex row justify-content-center">
             <div class="col-lg-4">
               <div class="card bg-light my-3">
@@ -10,7 +11,7 @@
                 </div>
                   <div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item"> Title: <%= @event.title %>
+                      <li class="list-group-item"> Title: <%= @event.title %></li>
                       <li class="list-group-item"> Description: <%= @event.description %></li>
                       <li class="list-group-item"> Start Date: <%= @event.start_date %></li>
                       <li class="list-group-item"> End Date: <%= @event.end_date %></li>
@@ -42,8 +43,44 @@
         </div>
     </div>
   </div>
-<br>
+  <br>
   <%= link_to "Back to events", events_path, class:"btn btn-primary nomad-button" %>
   <br>
   <br>
+  <%# Seller View starts here %>
+        <% else %>
+  <div class="show-container">
+    <div class="event-title">
+      <h2 class="card-title fw-bolder"> <%= @event.title %>
+    </div>
+
+    <div class="card-show">
+      <%= @event.image_url %>
+      <%# <%= cl_image_tag("THE_IMAGE_ID_FROM_LIBRARY",
+      width: 400, height: 300, crop: :fill) %>
+    </div>
+
+    <div>
+      <ul class="list-show">
+        <li class="list-show-item"><strong>Title:</strong> <%= @event.title %>
+        <li class="list-show-item"><strong>Description:</strong> <%= @event.description %></li>
+        <li class="list-show-item"><strong>Start Date:</strong> <%= @event.start_date %></li>
+        <li class="list-show-item"><strong>End Date:</strong> <%= @event.end_date %></li>
+        <li class="list-show-item"><strong>Location:</strong> <%= @event.location %></li>
+        <li class="list-show-item"><strong>Price:</strong> <%= @event.price %> MUR</li>
+        <li class="list-show-item"><strong>Slot:</strong> <%= @event.slot %></li>
+        <li class="list-show-item"><strong>Contact:</strong> <%= @event.contact %></li>
+        <li class="list-show-item"><strong>Category:</strong> <%= @event.category %></li>
+      <ul>
+    </div>
+
+
+
+    <div class="seller-links justify-content-center text-center">
+      <%= link_to 'Edit event', edit_event_path, class: "btn btn-ghost" %>
+      <%= link_to 'Delete event', event_path(@event), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost" %>
+      <%= link_to 'Dashboard', events_path, class: "btn btn-ghost" %>
+    </div>
+  </div>
+        <% end %>
 </div>
