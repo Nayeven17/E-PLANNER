@@ -1,3 +1,5 @@
+// Buyer scss starts here
+
 .event-show {
   background-color: #24262b;
 }
@@ -6,6 +8,12 @@
   padding-top: 30px;
   color: white;
 }
+
+.card-event {
+  width: 500px;
+  border-radius: 3px;
+}
+
 
 .btn-show {
   color: #ffffff;
@@ -17,18 +25,40 @@
   justify-content: center;
 }
 
-.event-title h2 {
+// Seller scss starts here
+
+.show-container {
+  background-color: #24262b;
+  height: 500px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.event-title {
   color: white;
+}
+
+.card-show {
+  width: 500px;
+  border-radius: 3px;
+  // background-color: white;
+  padding-bottom: 7px;
+}
+
+.card-show h2 {
+  color: black;
   margin-top: 40px;
   margin-bottom: 30px;
   text-align: center;
+  padding-top: 10px;
 }
 
-.list-show {
-  color: white;
-  margin-bottom: 30px;
-  text-align: center;
+.list-show li {
+  text-align: left;
+  margin-left: 25px;
+  padding-top: 5px;
 }
+
 
 .btn-ghost {
   margin-bottom: 30px;
