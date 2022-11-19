@@ -43,10 +43,11 @@ class EventsController < ApplicationController
   def update
     @event.update(event_params)
     redirect_to event_path(@event)
-    flash[:alert] = "Event Updated."
+    flash[:alert] = "Your event has been updated."
   end
 
   def destroy
+    @event = Event.find(params[:id])
     @event.destroy
     redirect_to events_path, status: :see_other
   end

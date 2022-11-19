@@ -4,20 +4,19 @@
   background-color: #24262b;
 }
 
-.container h1 {
+.container-buyer h1 {
   padding-top: 30px;
   color: white;
 }
 
-.card-event {
-  width: 500px;
+.card {
   border-radius: 3px;
 }
 
 
 .btn-show {
-  color: #ffffff;
-  border: 1px solid #fcfbfb;
+  color: black;
+  border: 1px solid black;
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 1;
@@ -25,13 +24,44 @@
   justify-content: center;
 }
 
+.btn-show:hover {
+  opacity: 1;
+  color: black;
+  background-color: #FFA248;
+  border-color: black;
+}
+
+
+.btn-back {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  justify-content: center;
+  margin-left: 25px;
+}
+
+.btn-back:hover {
+  opacity: 1;
+  color: black;
+  background-color: #FFA248;
+  border-color: black;
+}
+
 // Seller scss starts here
 
 .show-container {
   background-color: #24262b;
-  height: 500px;
+  background-image: url(https://images.unsplash.com/photo-1570876050997-2fdefb00c004?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 10px;
+  margin-bottom: 30px;
 }
 
 .event-title {
@@ -41,8 +71,8 @@
 .card-show {
   width: 500px;
   border-radius: 3px;
-  // background-color: white;
   padding-bottom: 7px;
+  margin-bottom: 25px;
 }
 
 .card-show h2 {
@@ -56,6 +86,7 @@
 .list-show li {
   text-align: left;
   margin-left: 25px;
+  margin-right: 25px;
   padding-top: 5px;
 }
 
