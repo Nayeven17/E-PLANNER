@@ -3,6 +3,8 @@ class EventsController < ApplicationController
   before_action :find_index, only: [:edit, :update]
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
+
+
   def index
     if params[:query].present?
       @events = Event.search_by_title_and_description(params[:query])
