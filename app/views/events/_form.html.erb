@@ -10,7 +10,8 @@
     <%= f.input :category %>
     <%= f.input :slot %>
     <%= f.input :contact %>
-    <%= f.input :photo, as: :file %>
+    <td>Title:<%= f.input :photos, as: :file, input_html: { multiple: true } %></td>
+     <%= f.input :photo, as: :file %>
       <div class="form-actions pb-2">
         <%= f.button :submit, class: 'btn btn-ghost' %>
         <%= link_to "Back to events", events_path, class: 'btn btn-ghost' %>
