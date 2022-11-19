@@ -1,30 +1,28 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
-  <div class="container">
-    <h1>Discover events in Mauritius</h1>
-    <p>Getting tickets has never been easier</p>
+<%# <% if current_user.is_buyer? %>
 
-    <div class="searchbar">
-      <%= form_with url: events_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find an event"
-      %>
-      <%= submit_tag "Search", class: "btn btn-warning" %>
-      <% end %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
+    <div class="container">
+      <h1>Discover events in Mauritius</h1>
+      <p>Getting tickets has never been easier</p>
+
+      <div class="searchbar">
+        <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find an event"
+        %>
+        <%= submit_tag "Search", class: "btn btn-warning" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-
-<br>
-<br>
-
-<div class="container container-background mb-5">
-  <br>
-  <h1>All Events</h1>
 
   <br>
+  <br>
 
+  <div class="container container-background mb-5">
+    <h1>All Events</h1>
   <div class="card-products-container">
     <% @events.each do |event| %>
       <div class="card-product" style="background-image: url(<%= cl_image_path event.photo.key if event.photo.attached? %>)">
@@ -34,34 +32,103 @@
               <h2><%= event.title %></h2>
             </div>
               <div class="details">
+    <br>
+                  <div style="margin-bottom: 15px;">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <%= event.start_date %> to <%= event.end_date %>
+                  </div>
 
-                <div style="margin-bottom: 15px;">
-                  <i class="fa-solid fa-calendar-days"></i>
-                  <%= event.start_date %> to <%= event.end_date %>
+
+                  <div style="margin-bottom: 15px;">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <%= event.location %>
+                  </div>
+
+                  <div style="margin-bottom: 15px;">
+                    <i class="fa-solid fa-ticket"></i>
+                    Rs <%= event.price %>
+                  </div>
+
+                  <div style="margin-bottom: 15px;">
+                    Available places : <%= event.slot %>
+                  </div>
+
                 </div>
-
-
-                <div style="margin-bottom: 15px;">
-                  <i class="fa-solid fa-location-dot"></i>
-                  <%= event.location %>
-                </div>
-
-                <div style="margin-bottom: 15px;">
-                  <i class="fa-solid fa-ticket"></i>
-                  Rs <%= event.price %>
-                </div>
-
-                <div style="margin-bottom: 15px;">
-                  Available places : <%= event.slot %>
-                </div>
-
+              <div>
+                <%= link_to "Go To Event", event, class:"btn btn-ghost" %>
               </div>
-            <div>
-              <%= link_to "Go To Event", event, class:"btn btn-ghost" %>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <br>
+    <div class= "container text-center"><h1>Map where events are taking place</h1></div>
+
+    <div class="rounded-3" style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-</div>
+
+<%# <% else %>
+<%# Seller %>
+
+  <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
+    <div class="container">
+      <h1>Advertise Your Event Here</h1>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p><%= link_to "Create An Event", "events/new", class: "btn btn-index" %></p>
+    </div>
+  </div>
+  <div class="container container-background mb-5">
+    <h1>All your events</h1>
+    <br>
+    <div class="card-products-container">
+      <% @events.each do |event| %>
+        <div class="card-product" style="background-image: url(<%= event.image_url %>)">
+          <div class="overlay">
+            <div class="card-product-infos">
+              <div class="head">
+                <h2><%= event.title %></h2>
+              </div>
+                <div class="details">
+
+                  <div style="margin-bottom: 15px;">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <%= event.start_date %> to <%= event.end_date %>
+                  </div>
+
+
+                  <div style="margin-bottom: 15px;">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <%= event.location %>
+                  </div>
+
+                  <div style="margin-bottom: 15px;">
+                    <i class="fa-solid fa-ticket"></i>
+                    Rs <%= event.price %>
+                  </div>
+
+                  <div style="margin-bottom: 15px;">
+                    Available places : <%= event.slot %>
+                  </div>
+
+                </div>
+              <div>
+                <%= link_to "Go To Event", event, class: "btn btn-ghost" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<%# <% end %>

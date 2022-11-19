@@ -3,13 +3,19 @@ class EventsController < ApplicationController
   before_action :find_index, only: [:edit, :update]
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
-
-
   def index
     if params[:query].present?
       @events = Event.search_by_title_and_description(params[:query])
     else
       @events = Event.all
+    end
+
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+        # info_window: render_to_string(partial: "info_window", locals: {event: event }) = info window
+      }
     end
   end
 

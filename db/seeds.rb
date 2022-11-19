@@ -23,7 +23,6 @@ puts "Created #{User.count} users"
 
 puts 'Creating events....'
 
-
 events.each do |event|
   Event.create!(title: event[:title], description: event[:description], start_date: event[:start_date],
                 end_date: event[:end_date], location: event[:location], price: event[:price], category: event[:category],
