@@ -91,7 +91,7 @@
     <br>
     <div class="card-products-container">
       <% @events.each do |event| %>
-        <div class="card-product" style="background-image: url(<%= event.image_url %>)">
+        <div class="card-product" style="background-image: url(<%= cl_image_path event.photo.key if event.photo.attached? %>)">
           <div class="overlay">
             <div class="card-product-infos">
               <div class="head">
