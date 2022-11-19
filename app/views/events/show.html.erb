@@ -89,7 +89,7 @@
 
       <div class="seller-links justify-content-center text-center">
         <%= link_to 'Edit this event', edit_event_path, class: "btn btn-ghost" %>
-        <%= link_to 'Delete event', events_path(@event),
+        <%= link_to 'Delete event', event_path(@event),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-show" %>
         <%= link_to 'Dashboard', events_path, class: "btn btn-ghost" %>
       </div>
