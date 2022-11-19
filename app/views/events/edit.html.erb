@@ -1,0 +1,20 @@
+<%= simple_form_for(@event) do |f| %>
+  <div class="container form-group bg-dark text-white px-5 pb-4 my-3" style="width: 60%" >
+  <div class="text-center pb-3"><h1>Event Details</h1> <p>Please fupdate your event details below:</p></div>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.input :category %>
+    <%= f.input :slot %>
+    <%= f.input :contact %>
+    <td>Title:<%= f.input :photos, as: :file, input_html: { multiple: true } %></td>
+     <%= f.input :photo, as: :file %>
+      <div class="form-actions pb-2">
+        <%= f.button :submit, class: 'btn btn-ghost' %>
+        <%= link_to "Back to event", event_path, class: 'btn btn-ghost' %>
+      </div>
+  </div>
+<% end %>
