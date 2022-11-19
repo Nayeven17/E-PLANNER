@@ -2,7 +2,13 @@
   <div class="container">
     <h1>E-Planner</h1>
 
-    <p>Our Innovation Is Your Perfect Event Solution</p>
+    <p class="ml9">
+      <span class="text-wrapper">
+        <span class="letters">
+          Our Innovation Is Your Perfect Event Solution
+        </span>
+      </span>
+    </p>
 
     <br>
     <br>
@@ -13,15 +19,53 @@
     </div>
   </div>
 </div>
+<div class="text-center container-home upcoming-events">
+  <h2>Upcoming Events</h2>
+  <div class="latest-event">
+    <div class="card-products-container">
+      <% @mostrecentevent.each do |event| %>
+        <div class="card-product" style="background-image: url(<%= event.image_url %>)">
+          <div class="overlay">
+            <div class="card-product-infos">
+              <div class="head">
+                <h2><%= event.title %></h2>
+              </div>
+                <div class="details">
 
-<br>
-<br>
-<br>
-<br>
+                  <div style="margin-bottom: 15px;">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <%= event.start_date %> to <%= event.end_date %>
+                  </div>
 
+
+                  <div style="margin-bottom: 15px;">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <%= event.location %>
+                  </div>
+
+                  <div style="margin-bottom: 15px;">
+                    <i class="fa-solid fa-ticket"></i>
+                    Rs <%= event.price %>
+                  </div>
+
+                  <div style="margin-bottom: 15px;">
+                    Available places : <%= event.slot %>
+                  </div>
+
+                </div>
+              <div>
+                <%= link_to "Go To Event", event, class:"btn btn-ghost" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <div class="container text-center">
   <h2>About E-Planner</h2>
-  <hr class="hr">
+  </div>
     <div class="about-us">
       <p>
         Created in 2020, E-Planner is an online platform whose main target is to provide event organisers with a reliable and user-friendly platform for the marketing and promotion of their events.
@@ -133,3 +177,24 @@
 <br>
 <br>
 <br>
+
+
+<script>
+var textWrapper = document.querySelector('.ml9 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+  anime.timeline({loop: true})
+  .add({
+    targets: '.ml9 .letter',
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+  }).add({
+    targets: '.ml9',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>

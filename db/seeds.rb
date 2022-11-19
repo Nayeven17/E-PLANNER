@@ -23,33 +23,9 @@ puts "Created #{User.count} users"
 
 puts 'Creating events....'
 
+
 events = [
-  {
-    title: "Summertime Madness",
-    description: "Greatest event for the beginning of summer featuring famous local artists!",
-    start_date: Date.new(2022, 8, 5),
-    end_date: Date.new(2022, 8, 5),
-    location: "Les Ruines de Balaclava",
-    price: 2_300,
-    category: "Festival",
-    slot: 100,
-    contact: "summertime@madness.com",
-    image_url: "https://images.unsplash.com/photo-1468234847176-28606331216a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1477&q=80",
-    user_id: user1.id
-  },
-  {
-    title: "Tomorrow Island 2022",
-    description: "A unique event for the first time in Mauritius...",
-    start_date: Date.new(2022, 11, 6),
-    end_date: Date.new(2022, 11, 6),
-    location: "Le Château de Labourdonnais",
-    price: 1_500,
-    category: "Festival",
-    slot: 400,
-    contact: "tomorrow@island.com",
-    image_url: "https://images.unsplash.com/photo-1574155088851-0c770818ba40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    user_id: user2.id
-  },
+
   {
     title: "Sunburn Festival",
     description: "The sun is back, and so is Sunburn! Come and have a great time with friends at Sunburn!",
@@ -191,6 +167,7 @@ events = [
     user_id: user1.id
   }
 ]
+
 
 events.each do |event|
   Event.create!(title: event[:title], description: event[:description], start_date: event[:start_date],
