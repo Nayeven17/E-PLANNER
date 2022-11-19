@@ -20,3 +20,21 @@
   background-color: #ffa248;
   border-color: black;
 }
+
+.btn-index {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bolder;
+  transition: opacity 0.3s ease;
+  align-items: flex-end;
+  border-color: #ffffff;
+}
+
+.btn-index:hover {
+  opacity: 1;
+  color: rgb(0, 0, 0);
+  background-color: #ffa248;
+  border-color: black;
+}

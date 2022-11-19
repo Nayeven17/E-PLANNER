@@ -10,16 +10,17 @@
                   <h2 class="card-title-buyer fw-bolder text-center align-items-center"> <%= @event.title %>
                 </div>
                   <div>
-                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><strong> Event Title:</strong> <%= @event.title %></li>
-                      <li class="list-group-item"><strong> Description:</strong> <%= @event.description %></li>
-                      <li class="list-group-item"><strong> Start Date:</strong> <%= @event.start_date %></li>
-                      <li class="list-group-item"><strong> End Date:</strong> <%= @event.end_date %></li>
-                      <li class="list-group-item"><strong> Location:</strong> <%= @event.location %></li>
-                      <li class="list-group-item"><strong> Price:</strong> <%= @event.price %> MUR</li>
-                      <li class="list-group-item"><strong> Slot:</strong> <%= @event.slot %></li>
-                      <li class="list-group-item"><strong> Contact:</strong> <%= @event.contact %></li>
-                      <li class="list-group-item"><strong> Category:</strong> <%= @event.category %></li>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"> Title: <%= @event.title %>
+                      <li class="list-group-item"> Description: <%= @event.description %></li>
+                      <li class="list-group-item"> Start Date: <%= @event.start_date %></li>
+                      <li class="list-group-item"> End Date: <%= @event.end_date %></li>
+                      <li class="list-group-item"> Location: <%= @event.location %></li>
+                      <li class="list-group-item"> Price: <%= @event.price %> MUR</li>
+                      <li class="list-group-item"> Slot: <%= @event.slot %></li>
+                      <li class="list-group-item"> Contact: <%= @event.contact %></li>
+                      <li class="list-group-item"> Category: <%= @event.category %></li>
+                      <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
                     </ul>
                   </div>
               </div>
@@ -44,6 +45,14 @@
     </div>
   </div>
   <br>
+  <div class="buyer-link justify-content-center">
+    <%= link_to "Back to events", events_path, class:"btn btn-back" %>
+  </div>
+  <% @event.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill %>
+  </ul>
+<% end %>
+<br>
   <div class="buyer-link justify-content-center">
     <%= link_to "Back to events", events_path, class:"btn btn-back" %>
   </div>

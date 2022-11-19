@@ -1,14 +1,15 @@
 class Event < ApplicationRecord
+  has_many_attached :photos
   has_one_attached :photo
-  validates :description, presence: true
-  validates :title,       presence: true
-  validates :category,  presence: true
-  validates :contact,     presence: true
-  validates :start_date,  presence: true
-  validates :end_date,    presence: true
-  validates :price,       presence: true, numericality: true
-  validates :location,    presence: true
-  validates :slot,        presence: true
+  # validates :description, presence: true
+  # validates :title,       presence: true
+  # validates :category,  presence: true
+  # validates :contact,     presence: true
+  # validates :start_date,  presence: true
+  # validates :end_date,    presence: true
+  # validates :price,       presence: true, numericality: true
+  # validates :location,    presence: true
+  # validates :slot,        presence: true
   belongs_to :user
 
   include PgSearch::Model
@@ -18,4 +19,7 @@ class Event < ApplicationRecord
                   using: {
                     tsearch: { prefix: true } # <-- now `superman batm` will return something!
                   }
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
