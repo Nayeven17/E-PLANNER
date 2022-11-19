@@ -1,4 +1,4 @@
-<%# <% if current_user.is_buyer? %>
+<% if current_user.is_buyer %>
 <div class="event-show">
   <div class="container-buyer text-center">
     <div cover="mb-4 d-flex align-items-center justify-content-center">
@@ -11,15 +11,15 @@
                 </div>
                   <div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item"> Title: <%= @event.title %>
-                      <li class="list-group-item"> Description: <%= @event.description %></li>
-                      <li class="list-group-item"> Start Date: <%= @event.start_date %></li>
-                      <li class="list-group-item"> End Date: <%= @event.end_date %></li>
-                      <li class="list-group-item"> Location: <%= @event.location %></li>
-                      <li class="list-group-item"> Price: <%= @event.price %> MUR</li>
-                      <li class="list-group-item"> Slot: <%= @event.slot %></li>
-                      <li class="list-group-item"> Contact: <%= @event.contact %></li>
-                      <li class="list-group-item"> Category: <%= @event.category %></li>
+                      <li class="list-group-item"> <strong>Title:</strong> <%= @event.title %>
+                      <li class="list-group-item"> <strong>Description:</strong> <%= @event.description %></li>
+                      <li class="list-group-item"> <strong>Start Date:</strong> <%= @event.start_date %></li>
+                      <li class="list-group-item"> <strong>End Date:</strong> <%= @event.end_date %></li>
+                      <li class="list-group-item"> <strong>Location:</strong> <%= @event.location %></li>
+                      <li class="list-group-item"> <strong>Price:</strong> <%= @event.price %> MUR</li>
+                      <li class="list-group-item"> <strong>Tickets Available:</strong> <%= @event.slot %></li>
+                      <li class="list-group-item"> <strong>Contact:</strong> <%= @event.contact %></li>
+                      <li class="list-group-item"> <strong>Category:</strong> <%= @event.category %></li>
                       <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
                     </ul>
                   </div>
@@ -62,37 +62,38 @@
 </div>
 
   <%# Seller View starts here %>
-<%# <% else %>
-<div class="show-container text-center">
-  <div class="event-title">
-    <h1>Event Details</h1>
+<% else %>
+  <div class="show-container text-center">
+    <div class="event-title">
+      <h1>Event Details</h1>
+    </div>
+
+    <<div class="card-show bg-light">
+      <div>
+        <h2 class="card-title-seller fw-bolder"> <%= @event.title %>
+      </div>
+
+      <div>
+        <ul class="list-show bg-light">
+          <li class="list-show-item"><strong>Title:</strong> <%= @event.title %></li>
+          <li class="list-show-item"><strong>Description: </strong> <%= @event.description %></li>
+          <li class="list-show-item"><strong>Start Date:</strong> <%= @event.start_date %></li>
+          <li class="list-show-item"><strong>End Date:</strong> <%= @event.end_date %></li>
+          <li class="list-show-item"><strong>Location:</strong> <%= @event.location %></li>
+          <li class="list-show-item"><strong>Price:</strong> <%= @event.price %>MUR</li>
+          <li class="list-show-item"><strong>Tickets Available:</strong> <%= @event.slot %></li>
+          <li class="list-show-item"><strong>Contact:</strong> <%= @event.contact %></li>
+          <li class="list-show-item"><strong>Category:</strong> <%= @event.category %></li>
+        <ul>
+      </div>
+
+      <div class="seller-links justify-content-center text-center">
+        <%= link_to 'Edit this event', edit_event_path, class: "btn btn-ghost" %>
+        <%= link_to 'Delete event', events_path(@event),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-show" %>
+        <%= link_to 'Dashboard', events_path, class: "btn btn-ghost" %>
+      </div>
   </div>
 
-  <<div class="card-show bg-light">
-    <div>
-      <h2 class="card-title-seller fw-bolder"> <%= @event.title %>
-    </div>
-
-    <div>
-      <ul class="list-show bg-light">
-        <li class="list-show-item"><strong>Title:</strong> <%= @event.title %></li>
-        <li class="list-show-item"><strong>Description: </strong> <%= @event.description %></li>
-        <li class="list-show-item"><strong>Start Date:</strong> <%= @event.start_date %></li>
-        <li class="list-show-item"><strong>End Date:</strong> <%= @event.end_date %></li>
-        <li class="list-show-item"><strong>Location:</strong> <%= @event.location %></li>
-        <li class="list-show-item"><strong>Price:</strong> <%= @event.price %>MUR</li>
-        <li class="list-show-item"><strong>Slot:</strong> <%= @event.slot %></li>
-        <li class="list-show-item"><strong>Contact:</strong> <%= @event.contact %></li>
-        <li class="list-show-item"><strong>Category:</strong> <%= @event.category %></li>
-      <ul>
-    </div>
-
-    <div class="seller-links justify-content-center text-center">
-      <%= link_to 'Edit this event', edit_event_path, class: "btn btn-ghost" %>
-      <%= link_to 'Delete event', events_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-ghost" %>
-      <%= link_to 'Dashboard', events_path, class: "btn btn-ghost" %>
-    </div>
-</div>
-
-<br>
-<%# <% end %>
+  <br>
+<% end %>
