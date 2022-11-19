@@ -9,6 +9,14 @@ class EventsController < ApplicationController
     else
       @events = Event.all
     end
+
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+        # info_window: render_to_string(partial: "info_window", locals: {event: event }) = info window
+      }
+    end
   end
 
   def show
@@ -56,7 +64,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:event_title, :description, :pax, :category, :price, :start_date, :end_date, :location, :slot, :contact, :image_url, :photo)
+    params.require(:event).permit(:title, :description, :pax, :category, :price, :start_date, :end_date, :location, :slot, :contact, :image_url, :photo)
   end
 
   def booking_params
