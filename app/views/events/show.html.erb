@@ -19,6 +19,7 @@
                       <li class="list-group-item"> Slot: <%= @event.slot %></li>
                       <li class="list-group-item"> Contact: <%= @event.contact %></li>
                       <li class="list-group-item"> Category: <%= @event.category %></li>
+                      <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
                     </ul>
                   </div>
               </div>
@@ -42,6 +43,10 @@
         </div>
     </div>
   </div>
+  <% @event.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill %>
+  </ul>
+<% end %>
 <br>
   <%= link_to "Back to events", events_path, class:"btn btn-primary nomad-button" %>
   <br>
