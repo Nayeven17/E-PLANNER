@@ -16,6 +16,9 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+
+      <%= f.input :is_buyer, as: :select, collection: [["I want to buy tickets", true],["I want to sell tickets", false]] %>
+
     </div>
 
     <div class="form-actions text-center">
