@@ -74,4 +74,8 @@ class EventsController < ApplicationController
     params.require(:booking).permit(:pax, :user_id, :event_id)
   end
 
+  def find_index
+
+  end
+
 end
