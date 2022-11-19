@@ -58,20 +58,20 @@ puts "Created #{Event.count} events"
 
 puts 'Creating bookings....'
 
-bookings = [
-  {
-    event_id: Event.all.sample.id,
-    user_id: user1.id
-  },
-  {
-    event_id: Event.all.sample.id,
-    user_id: user2.id
-  }
-]
+# bookings = [
+#   {
+#     # event_id: Event.all.sample.id,
+#     user_id: user1.id
+#   },
+#   {
+#     event_id: Event.all.sample.id,
+#     user_id: user2.id
+#   }
+# ]
 
-bookings.each do |booking|
-  Booking.create!(event_id: booking[:event_id], user_id: booking[:user_id])
-end
+# bookings.each do |booking|
+#   Booking.create!(event_id: booking[:event_id], user_id: booking[:user_id])
+# end
 
 puts "Created #{Booking.count} bookings"
 
