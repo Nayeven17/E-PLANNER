@@ -20,7 +20,7 @@
                       <li class="list-group-item"> <strong>Tickets Available:</strong> <%= @event.slot %></li>
                       <li class="list-group-item"> <strong>Contact:</strong> <%= @event.contact %></li>
                       <li class="list-group-item"> <strong>Category:</strong> <%= @event.category %></li>
-                      <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+                      <%= cl_image_tag @event.photo.key, height: 300, width: 488, crop: :fill %>
                     </ul>
                   </div>
               </div>
@@ -41,20 +41,16 @@
                   <% end %>
               </div>
             </div>
-        </div>
+        </div>  <% @event.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill %>
+  <% end %>
     </div>
   </div>
   <br>
-  <div class="buyer-link justify-content-center">
-    <%= link_to "Back to events", events_path, class:"btn btn-back" %>
-  </div>
-  <% @event.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill %>
-  </ul>
-<% end %>
+
 <br>
   <div class="buyer-link justify-content-center">
-    <%= link_to "Back to events", events_path, class:"btn btn-back" %>
+    <%= link_to "< Back to events", events_path, class: "btn btn-back" %>
   </div>
   <br>
   <br>
@@ -63,6 +59,7 @@
 
   <%# Seller View starts here %>
 <% else %>
+
   <div class="show-container text-center">
     <div class="event-title">
       <h1>Event Details</h1>
@@ -84,9 +81,12 @@
           <li class="list-show-item"><strong>Tickets Available:</strong> <%= @event.slot %></li>
           <li class="list-show-item"><strong>Contact:</strong> <%= @event.contact %></li>
           <li class="list-show-item"><strong>Category:</strong> <%= @event.category %></li>
+           <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
         <ul>
       </div>
-
+         <% @event.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill %>
+  <% end %>
       <div class="seller-links justify-content-center text-center">
         <%= link_to 'Edit this event', edit_event_path, class: "btn btn-ghost" %>
         <%= link_to 'Delete event', event_path(@event),
@@ -95,5 +95,4 @@
       </div>
   </div>
 
-  <br>
 <% end %>
