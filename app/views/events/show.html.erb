@@ -1,12 +1,13 @@
+<%# <% if current_user.is_buyer? %>
 <div class="event-show">
-  <div class="container text-center">
-    <div cover mb-4 d-flex align-items-center justify-content-center>
+  <div class="container-buyer text-center">
+    <div cover="mb-4 d-flex align-items-center justify-content-center">
         <h1>Event Details</h1>
-          <div class="d-flex row justify-content-center">
+           <div class="d-flex row justify-content-center">
             <div class="col-lg-4">
               <div class="card bg-light my-3">
                 <div class="card-body d-flex align-items-center">
-                  <h2 class="card-title fw-bolder"> <%= @event.title %>
+                  <h2 class="card-title-buyer fw-bolder text-center align-items-center"> <%= @event.title %>
                 </div>
                   <div>
                     <ul class="list-group list-group-flush">
@@ -29,26 +30,69 @@
     </div>
 
   <div class="d-flex row justify-content-center">
-    <div class="col-lg-3">
+    <div class="col-lg-4">
         <div class="card bg-light my-3">
             <div class="card-body d-flex align-items-center">
               <div class="container new-booking-form">
                 <h2>Number of persons:</h2>
                   <%= simple_form_for [@event, @booking] do |f| %>
                   <%= f.input :pax, as: :integer %>
-                  <%= f.button :submit, "Book here", class:"btn btn-primary nomad-button" %>
+                  <%= f.button :submit, "Book here", class:"btn btn-show" %>
                   <% end %>
               </div>
             </div>
         </div>
     </div>
   </div>
+  <br>
+  <div class="buyer-link justify-content-center">
+    <%= link_to "Back to events", events_path, class:"btn btn-back" %>
+  </div>
   <% @event.photos.each do |photo| %>
     <%= cl_image_tag photo.key, height: 250, width: 300, crop: :fill %>
   </ul>
 <% end %>
 <br>
-  <%= link_to "Back to events", events_path, class:"btn btn-primary nomad-button" %>
+  <div class="buyer-link justify-content-center">
+    <%= link_to "Back to events", events_path, class:"btn btn-back" %>
+  </div>
   <br>
   <br>
+  </div>
 </div>
+
+  <%# Seller View starts here %>
+<%# <% else %>
+<div class="show-container text-center">
+  <div class="event-title">
+    <h1>Event Details</h1>
+  </div>
+
+  <<div class="card-show bg-light">
+    <div>
+      <h2 class="card-title-seller fw-bolder"> <%= @event.title %>
+    </div>
+
+    <div>
+      <ul class="list-show bg-light">
+        <li class="list-show-item"><strong>Title:</strong> <%= @event.title %></li>
+        <li class="list-show-item"><strong>Description: </strong> <%= @event.description %></li>
+        <li class="list-show-item"><strong>Start Date:</strong> <%= @event.start_date %></li>
+        <li class="list-show-item"><strong>End Date:</strong> <%= @event.end_date %></li>
+        <li class="list-show-item"><strong>Location:</strong> <%= @event.location %></li>
+        <li class="list-show-item"><strong>Price:</strong> <%= @event.price %>MUR</li>
+        <li class="list-show-item"><strong>Slot:</strong> <%= @event.slot %></li>
+        <li class="list-show-item"><strong>Contact:</strong> <%= @event.contact %></li>
+        <li class="list-show-item"><strong>Category:</strong> <%= @event.category %></li>
+      <ul>
+    </div>
+
+    <div class="seller-links justify-content-center text-center">
+      <%= link_to 'Edit this event', edit_event_path, class: "btn btn-ghost" %>
+      <%= link_to 'Delete event', events_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-ghost" %>
+      <%= link_to 'Dashboard', events_path, class: "btn btn-ghost" %>
+    </div>
+</div>
+
+<br>
+<%# <% end %>
