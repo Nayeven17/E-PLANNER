@@ -3,13 +3,19 @@ class EventsController < ApplicationController
   before_action :find_index, only: [:edit, :update]
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
-
-
   def index
     if params[:query].present?
       @events = Event.search_by_title_and_description(params[:query])
     else
       @events = Event.all
+    end
+
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+        # info_window: render_to_string(partial: "info_window", locals: {event: event }) = info window
+      }
     end
   end
 
@@ -43,12 +49,15 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])
     @event.update(event_params)
+    redirect_to event_path(@event)
+    flash[:alert] = "Your event has been updated."
   end
 
   def destroy
+    @event = Event.find(params[:id])
     @event.destroy
+    redirect_to events_path, status: :see_other
   end
 
   private
@@ -58,7 +67,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :description, :pax, :category, :price, :start_date, :end_date, :location, :slot, :contact, :image_url, :photo)
+    params.require(:event).permit(:title, :description, :category, :price, :start_date, :photo, :end_date, :location, :slot, :contact, :image_url, photos: [])
   end
 
   def booking_params
