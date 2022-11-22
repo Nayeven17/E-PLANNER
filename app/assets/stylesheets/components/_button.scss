@@ -32,9 +32,30 @@
   border-color: #ffffff;
 }
 
-.btn-index:hover {
-  opacity: 1;
+// .btn-index:hover {
+//   opacity: 1;
+//   color: rgb(0, 0, 0);
+//   background-color: #ffa248;
+//   border-color: black;
+// }
+
+.btn-booking {
   color: rgb(0, 0, 0);
   background-color: #ffa248;
+  border-color: rgb(0, 0, 0);
+  border-radius: 50px;
+  align-items: flex-end;
+
+
+}
+
+.btn-booking:hover {
+  opacity: 1;
+  color: black;
+  background-color: #FFA248;
   border-color: black;
+}
+
+.fa-trash-alt {
+  color:rgb(117, 111, 111);
 }

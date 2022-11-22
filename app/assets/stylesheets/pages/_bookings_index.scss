@@ -1,0 +1,35 @@
+.bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.container-booking h1 {
+  color: white;
+  margin-left: 50px;
+  padding-top: 50px;
+}
+.btn-book {
+  margin-left: 40px;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  justify-content: center;
+}
+.btn-book:hover {
+  opacity: 1;
+  color: black;
+  background-color: #FFA248;
+  border-color: black;
+}
+.table tr td {
+  color: white;
+}
+
+.table-hover > tbody > tr:hover > * {
+  --bs-table-accent-bg: var(--bs-table-hover-bg);
+  color: #ffffff;
+}
