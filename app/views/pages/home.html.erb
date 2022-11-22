@@ -20,12 +20,12 @@
     </div>
   </div>
 </div>
-<div class="text-center container-home upcoming-events">
+<div class="text-center container-home upcoming-events pt-3">
   <h2>Upcoming Events</h2>
   <div class="latest-event">
     <div class="card-products-container">
       <% @mostrecentevent.each do |event| %>
-        <div class="card-product" style="background-image: url(<%= cl_image_path event.photo.key if event.photo.attached? %>)">
+        <div class="card-product" style="background-image:  linear-gradient(to right, rgba(0,0,0,1),rgba(0,0,0,0)), url(<%= cl_image_path event.photo.key if event.photo.attached? %>)">
           <div class="overlay">
             <div class="card-product-infos">
               <div class="head">
@@ -55,7 +55,7 @@
 
                 </div>
               <div>
-                <%= link_to "Go To Event", event, class:"btn btn-ghost" %>
+                <%= link_to "Go To Event", event, class:"btn btn-ghost " %>
               </div>
             </div>
           </div>

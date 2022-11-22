@@ -1,51 +1,48 @@
 <% if current_user.is_buyer %>
 
 <div class="container bg-dark py-5 my-3">
-   <div class="row justify-content-center">
-      <div class="col-12 text-white text-center">
-          <h1>Event Details</h1>
+  <div class="row justify-content-center">
+    <div class="col-12 text-white text-center">
+        <h1>Event Details</h1>
+    </div>
+      <div class="col-4">
+        <%= cl_image_tag @event.photo.key, height: 300, width: 450, crop: :fill %>
       </div>
         <div class="col-4">
-          <%= cl_image_tag @event.photo.key, height: 300, width: 450, crop: :fill %>
+          <% @event.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 450, crop: :fill %>
+          <% end %>
         </div>
-          <div class="col-4">
-            <% @event.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 450, crop: :fill %>
-            <% end %>
+          <div class="col-8">
+            <ul class="card-show bg-dark">
+              <h2 class="card-title text-center pt-3"> <%= @event.title %> </h2>
+                <li class="list-group-item"> <strong>Title:</strong> <%= @event.title %>
+                <li class="list-group-item"> <strong>Description:</strong> <%= @event.description %></li>
+                <li class="list-group-item"> <strong>Start Date:</strong> <%= @event.start_date %></li>
+                <li class="list-group-item"> <strong>End Date:</strong> <%= @event.end_date %></li>
+                <li class="list-group-item"> <strong>Location:</strong> <%= @event.location %></li>
+                <li class="list-group-item"> <strong>Price:</strong> <%= @event.price %> MUR</li>
+                <li class="list-group-item"> <strong>Tickets Available:</strong> <%= @event.slot %></li>
+                <li class="list-group-item"> <strong>Contact:</strong> <%= @event.contact %></li>
+                <li class="list-group-item"> <strong>Category:</strong> <%= @event.category %></li>
+            </ul>
           </div>
-            <div class="col-8">
-              <ul class="card-show bg-dark">
-                <h2 class="card-title text-center pt-3"> <%= @event.title %> </h2>
-                  <li class="list-group-item"> <strong>Title:</strong> <%= @event.title %>
-                  <li class="list-group-item"> <strong>Description:</strong> <%= @event.description %></li>
-                  <li class="list-group-item"> <strong>Start Date:</strong> <%= @event.start_date %></li>
-                  <li class="list-group-item"> <strong>End Date:</strong> <%= @event.end_date %></li>
-                  <li class="list-group-item"> <strong>Location:</strong> <%= @event.location %></li>
-                  <li class="list-group-item"> <strong>Price:</strong> <%= @event.price %> MUR</li>
-                  <li class="list-group-item"> <strong>Tickets Available:</strong> <%= @event.slot %></li>
-                  <li class="list-group-item"> <strong>Contact:</strong> <%= @event.contact %></li>
-                  <li class="list-group-item"> <strong>Category:</strong> <%= @event.category %></li>
-              </ul>
-            </div>
-          <div class="row justify-content-center">
-    <div class="col-lg-4">
-        <div class="card bg-light my-3">
-            <div class="card-body d-flex align-items-center">
-              <div class="container new-booking-form">
-                <h2>Number of persons:</h2>
-                  <%= simple_form_for [@event, @booking] do |f| %>
-                  <%= f.input :pax, as: :integer %>
-                  <%= f.button :submit, "Book here", class:"btn btn-show" %>
-                  <% end %>
-              </div>
-            </div>
+        <div class="row justify-content-center">
+          <div class="col-8 text-white">
+            <h4>Number of persons:</h4>
+              <%= simple_form_for [@event, @booking] do |f| %>
+              <%= f.input :pax, label: "Tickets:", as: :integer %>
+              <%= f.button :submit, "Book here", class:"btn btn-show" %>
+              <% end %>
+          </div>
         </div>
-    </div>
   </div>
+  <div class="text-center col-12 pt-5">
+    <%= link_to "Back to events", events_path, class: "btn btn-back" %>
+  </div>
+</div>
 
-  <div class="text-center col-5">
-    <%= link_to "< Back to events", events_path, class: "btn btn-back" %>
-  </div>
+
 
   <%# Seller View starts here %>
 <% else %>
