@@ -34,7 +34,8 @@
 
 .container-background{
   background-color: #212529;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
+  padding-top: 5px;
 }
 
 .container-background h1{
@@ -58,8 +59,8 @@
   grid-template-rows: 1fr 1fr 1fr;
 
   // background: rgba(77, 77, 77, .9);
-  color: #FEF5DF;
-  opacity: 65%;
+  color: #ffffff;
+  opacity: 75%;
   transition: all 0.5s;
 }
 
