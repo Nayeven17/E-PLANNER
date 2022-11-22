@@ -23,52 +23,53 @@
 
   <div class="container container-background mb-5">
     <h1>All Events</h1>
-  <div class="card-products-container">
-    <% @events.each do |event| %>
-      <div class="card-product" style="background-image: url(<%= cl_image_path event.photo.key if event.photo.attached? %>)">
-        <div class="overlay">
-          <div class="card-product-infos">
-            <div class="head">
-              <h2><%= event.title %></h2>
-            </div>
-              <div class="details">
-    <br>
-                  <div style="margin-bottom: 15px;">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <%= event.start_date %> to <%= event.end_date %>
+    <div class="card-products-container">
+      <% @events.each do |event| %>
+        <div class="card-product" style="background-image: url(<%= cl_image_path event.photo.key if event.photo.attached? %>)">
+          <div class="overlay">
+            <div class="card-product-infos">
+              <div class="head">
+                <h2><%= event.title %></h2>
+              </div>
+                <div class="details">
+      <br>
+                    <div style="margin-bottom: 15px;">
+                      <i class="fa-solid fa-calendar-days"></i>
+                      <%= event.start_date %> to <%= event.end_date %>
+                    </div>
+
+
+                    <div style="margin-bottom: 15px;">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <%= event.location %>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                      <i class="fa-solid fa-ticket"></i>
+                      Rs <%= event.price %>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                      Available places : <%= event.slot %>
+                    </div>
+
                   </div>
-
-
-                  <div style="margin-bottom: 15px;">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <%= event.location %>
-                  </div>
-
-                  <div style="margin-bottom: 15px;">
-                    <i class="fa-solid fa-ticket"></i>
-                    Rs <%= event.price %>
-                  </div>
-
-                  <div style="margin-bottom: 15px;">
-                    Available places : <%= event.slot %>
-                  </div>
-
+                <div>
+                  <%= link_to "Go To Event", event, class:"btn btn-ghost" %>
                 </div>
-              <div>
-                <%= link_to "Go To Event", event, class:"btn btn-ghost" %>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-    <br>
-    <div class= "container text-center"><h1>Map where events are taking place</h1></div>
+        <% end %>
+      </div>
+      <br>
+      <div class= "container text-center"><h1>Map where events are taking place</h1></div>
 
-    <div class="rounded-3" style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      <div class="rounded-3" style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
   </div>
 
 <% else %>
