@@ -24,7 +24,6 @@ class BookingsController < ApplicationController
     @booking.save
     @event.update(slot: @event.slot - @pax)
     redirect_to bookings_path
-    flash[:alert] = "Congratulation your event is booked !"
   end
 
   def destroy
