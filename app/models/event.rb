@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   has_many_attached :photos
   has_one_attached :photo
+  has_many :bookings, dependent: :destroy
   # validates :description, presence: true
   # validates :title,       presence: true
   # validates :category,  presence: true
