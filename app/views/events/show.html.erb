@@ -1,21 +1,21 @@
 <% if current_user.is_buyer %>
 
-<div class="container bg-dark py-5 my-3">
+<div class="container bg-dark py-4 my-3 ">
   <div class="row justify-content-center">
-    <div class="col-12 text-white text-center">
+    <div class="col-12 text-white text-center pb-3 ">
         <h1>Event Details</h1>
     </div>
-      <div class="col-4">
+      <div class="col-4 m-3 p-0">
         <%= cl_image_tag @event.photo.key, height: 300, width: 450, crop: :fill %>
       </div>
-        <div class="col-4">
+        <div class="col-4 m-3">
           <% @event.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 300, width: 450, crop: :fill %>
           <% end %>
         </div>
-          <div class="col-8">
+          <div class="col-9 mt-3 p-y-0 border rounded-4 border-warning">
             <ul class="card-show bg-dark">
-              <h2 class="card-title text-center pt-3"> <%= @event.title %> </h2>
+              <h2 class="card-title py-4"> <%= @event.title %> </h2>
                 <li class="list-group-item"> <strong>Title:</strong> <%= @event.title %>
                 <li class="list-group-item"> <strong>Description:</strong> <%= @event.description %></li>
                 <li class="list-group-item"> <strong>Start Date:</strong> <%= @event.start_date %></li>
@@ -27,14 +27,15 @@
                 <li class="list-group-item"> <strong>Category:</strong> <%= @event.category %></li>
             </ul>
           </div>
-        <div class="row justify-content-center">
-          <div class="col-8 text-white">
-            <h4>Number of persons:</h4>
+        <div class="row justify-content-evenly mt-3">
+          <div class="col-6 text-white mx-5 px-4 border rounded-4 border-warning p-3" >
+            <h4>Number of Tickets:</h4>
               <%= simple_form_for [@event, @booking] do |f| %>
               <%= f.input :pax, label: "Tickets:", as: :integer %>
               <%= f.button :submit, "Book here", class:"btn btn-show" %>
               <% end %>
           </div>
+          <div class="col-2"></div>
         </div>
   </div>
   <div class="text-center col-12 pt-5">
@@ -42,27 +43,26 @@
   </div>
 </div>
 
-
-
   <%# Seller View starts here %>
+
 <% else %>
 
 <div class="container bg-dark py-5 my-3">
   <div class="row justify-content-center">
-    <div class="col-12 text-white text-center">
+    <div class="col-12 text-white text-center pb-3">
       <h1>Event Details</h1>
     </div>
-    <div class="col-4">
+    <div class="col-4 m-3 p-0">
         <%= cl_image_tag @event.photo.key, height: 300, width: 450, crop: :fill %>
     </div>
-    <div class="col-4">
+    <div class="col-4 m-3">
         <% @event.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 300, width: 450, crop: :fill %>
         <% end %>
     </div>
-        <div class="col-8">
+        <div class="col-9 mt-3 p-y-0 border rounded-4 border-warning">
           <ul class="card-show bg-dark">
-            <h2 class="card-title text-center pt-3"> <%= @event.title %></h2>
+            <h2 class="card-title py-4"> <%= @event.title %></h2>
             <li class="list-show-item"><strong>Title:</strong> <%= @event.title %></li>
             <li class="list-show-item"><strong>Description: </strong> <%= @event.description %></li>
             <li class="list-show-item"><strong>Start Date:</strong> <%= @event.start_date %></li>
