@@ -18,7 +18,7 @@
           <%= link_to "",
           booking_path(booking), class:"fas fa-trash-alt",
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></td>
-          <%if booking%>
+          <%if booking.pax%>
           <td>TOTAL : RS <%= booking.pax * booking.event.price %></td>
           <% end %>
         </tr>
