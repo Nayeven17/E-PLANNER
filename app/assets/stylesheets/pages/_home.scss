@@ -513,7 +513,6 @@ width: 120px;
   position: relative;
   font-weight: 200;
   font-size: 4em;
-  top: 90px;
 }
 
 .ml9 .text-wrapper {
@@ -529,4 +528,10 @@ width: 120px;
   transform-origin: 50% 100%;
   display: inline-block;
   line-height: 1em;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  font-size: 200px;
 }
