@@ -215,7 +215,7 @@ hr {
 // sliding background about us
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #FFA248 50%, rgb(250, 207, 89) 50%);
+  background-image: linear-gradient(-60deg, #FA9C00 50%, #fb6d00 50%);
   bottom:0;
   left:-50%;
   opacity:.5;
@@ -512,7 +512,7 @@ width: 120px;
 .ml9 {
   position: relative;
   font-weight: 200;
-  font-size: 4em;
+
 }
 
 .ml9 .text-wrapper {
@@ -522,16 +522,26 @@ width: 120px;
   padding-right: 0.05em;
   padding-bottom: 0.1em;
   overflow: hidden;
+
 }
 
 .ml9 .letter {
   transform-origin: 50% 100%;
   display: inline-block;
   line-height: 1em;
+  font-size: 35px;
 }
 
 .header {
   text-align: center;
   color: white;
-  font-size: 200px;
+  // font-size: 300px;
+}
+
+.card-product-infos i {
+  color:#FFA248;
+}
+
+.header h1 {
+  font-size: 6em;
 }
