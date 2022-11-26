@@ -1,20 +1,24 @@
-<%= simple_form_for(@event) do |f| %>
-  <div class="container form-group bg-dark text-white px-5 py-4 my-3" style="width: 60%" >
-  <div class="text-center pb-3"><h1>Create your event</h1> <p>Please fill in this form below:</p></div>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :location %>
-    <%= f.input :price %>
-    <%= f.input :category %>
-    <%= f.input :slot %>
-    <%= f.input :contact %>
-    <%= f.input :photos, as: :file, label: "Event Photos", input_html: { multiple: true } %>
-     <%= f.input :photo, as: :file, label: "Event Poster" %>
-      <div class="form-actions pb-2">
-        <%= f.button :submit, class: 'btn btn-ghost' %>
-        <%= link_to "Back to events", events_path, class: 'btn btn-ghost' %>
-      </div>
-  </div>
-<% end %>
+<div class="bg-image" style="background-image: url(https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)">
+<br>
+  <%= simple_form_for(@event) do |f| %>
+    <div class="container form-group bg-dark text-white px-5 py-4" style="width: 60%" >
+    <div class="text-center pb-3"><h1>Create your event</h1> <p>Please fill in this form below:</p></div>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :location %>
+      <%= f.input :price %>
+      <%= f.input :category %>
+      <%= f.input :slot %>
+      <%= f.input :contact %>
+      <%= f.input :photos, as: :file, label: "Event Photos", input_html: { multiple: true } %>
+      <%= f.input :photo, as: :file, label: "Event Poster" %>
+        <div class="form-actions pb-2">
+          <%= f.button :submit, class: 'btn btn-ghost' %>
+          <%= link_to "Back to events", events_path, class: 'btn btn-ghost' %>
+        </div>
+    </div>
+  <% end %>
+  <br>
+</div>
